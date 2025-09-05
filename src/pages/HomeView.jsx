@@ -1,4 +1,9 @@
-function Home() {
+import Auth from "../services/auth.service.js"
+
+function HomeView() {
+
+    let auth = new Auth()
+
     return (
         <>
             <title>
@@ -10,8 +15,12 @@ function Home() {
             <span>
                 create new events!
             </span>
+
+            <button onClick={auth.redirectToAuthProvider}>
+                get started
+            </button>
         </>
     )
 }
 
-export default Home
+export default HomeView

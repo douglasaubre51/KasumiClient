@@ -2,16 +2,16 @@ import { jwtDecode } from "jwt-decode"
 
 class Auth {
 
-    // @ts-ignore
-    WAGURIBaseUri = import.meta.env.VITE_WAGURI_URI_BASE
-    // @ts-ignore
-    KASUMIBaseUri = import.meta.env.VITE_KASUMI_URI_BASE
-    // @ts-ignore
-    ProjectId = import.meta.env.VITE_PROJECT_ID
+    constructor() {
+    }
 
     redirectToAuthProvider() {
+        // @ts-ignore
+        let WAGURIBaseUri = import.meta.env.VITE_WAGURI_URI_BASE
+        // @ts-ignore
+        let ProjectId = import.meta.env.VITE_PROJECT_ID
 
-        const uri = this.WAGURIBaseUri + "/Auth/Login/" + this.ProjectId
+        const uri = WAGURIBaseUri + "/Auth/Login/" + ProjectId
 
         // redirect to waguri login view
         window.location.href = uri
